@@ -27,8 +27,8 @@
  var person=smart.patient.api.fetchAll({type: "Person"});
    smart.patient.api.fetchAll({type:"Encounter"}).then(function(results, refs) {
   results.forEach(function(encounter){
-    patient
-    console.log('encounter patient: ' ,encounter.patient);
+    console.log('encounter appointment: ' ,encounter.appointment);
+     console.log('encounter period: ' ,encounter.period);
    console.log('encounter reason: ' ,encounter.reason);
   });
 });
