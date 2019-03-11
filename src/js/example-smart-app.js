@@ -38,10 +38,10 @@
     }
   });
 });
-         smart.patient.api.fetchAll({type:"Goal"}).then(function(results, refs) {
-  results.forEach(function(goal){
+         smart.patient.api.fetchAll({type:"Immunization"}).then(function(results, refs) {
+  results.forEach(function(im){
    
-     console.log('goal : ',goal);
+     console.log('Immunization : ',im);
     
     
   });
