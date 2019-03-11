@@ -11,6 +11,18 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
+        var pe = smart.patient.api.fetchAll({
+                    type: 'Person',
+                    query: {
+                      code: {
+                        $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
+                              'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
+                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
+                      }
+                    }
+                  });
+              console.log('Person', pe);
+
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -48,7 +60,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);    
-          p.pebirthdate = "uy";
+          p.pebirthdate = "20-29-09";
           p.pegender = "male";
 
           if (typeof systolicbp != 'undefined')  {
