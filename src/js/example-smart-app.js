@@ -33,6 +33,7 @@
                       }
                     }
                   });
+              console.log('Obs', obv);
 
         $.when(pt, obv).fail(onError);
 
