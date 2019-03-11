@@ -39,9 +39,6 @@
   });
 });
         
-        console.log('person name: ' ,person.name);
-       
-
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
