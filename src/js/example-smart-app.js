@@ -34,6 +34,7 @@
   results.forEach(function(encounter){
     if(encounter.reason!=null)
     {console.log('encounter location: ',encounter.location.location);
+     console.log('encounter locations: ',encounter.location);
       encounters.push(encounter.reason);
     }
   });
