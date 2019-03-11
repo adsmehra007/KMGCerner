@@ -174,7 +174,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#patientAdd').html(p.patientAdd);
-        $('#maritalStatus').html(p.maritalStatus);
+        $('#maritalStatus').html(p.maritalStatus); 
     $('#encounterReason').html(p.encounterReasons);
      $('#efname').html(p.fname);
      $('#elname').html(p.lname);
