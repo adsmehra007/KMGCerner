@@ -41,7 +41,7 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var patientAddress =patient.address;
-          if(patientAddress[0].text!=Null ||patientAddress[0].text!="")
+          if(patientAddress[0].text!= null ||patientAddress[0].text!="")
           {
             patientAddress =patientAddress[0].text; 
           }
