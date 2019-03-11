@@ -13,16 +13,7 @@
               console.log('Loading error', smart);
 
         var pt = patient.read();
-        var pe = smart.patient.api.fetchAll({
-                    type: 'Person',
-                    query: {
-                      code: {
-                        $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
-                              'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
-                      }
-                    }
-                  });
+       
 
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -37,10 +28,8 @@
 
         $.when(pt, obv).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv, pe) {
+        $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
-          var peByCodes = smart.byCodes(pe, 'code');
-
           
           var gender = patient.gender;
 
