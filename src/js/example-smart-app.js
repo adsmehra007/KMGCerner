@@ -55,7 +55,7 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var patientAddress =patient.address;
-          var encounterReasons=" ";
+          var encounterReasons="";
           $.each(encounters, function( index, value ) {
             encounterReasons+=value[0].text+"," ;
           });
@@ -165,6 +165,8 @@
     $('#patientAdd').html(p.patientAdd);
         $('#maritalStatus').html(p.maritalStatus);
     $('#encounterReason').html(p.encounterReasons);
+     $('#efname').html(p.fname);
+     $('#elname').html(p.lname);
     
   };
  
