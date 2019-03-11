@@ -30,7 +30,15 @@
                      
                    
                   });
+         var encounter=patient.api.fetchAll({
+                    type: 'Encounter',
+                   
+                     
+                   
+                  });
         console.log('person name: ' ,person.name);
+         console.log('encounter status: ' ,encounter.status);
+
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
