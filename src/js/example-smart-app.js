@@ -21,14 +21,14 @@
                       }
                     }
                   });
-      console.log('Smart', smart);
+     
 
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-
+           console.log('pAdd', patient.address);
           var fname = '';
           var lname = '';
 
