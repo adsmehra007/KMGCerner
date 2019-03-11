@@ -10,7 +10,6 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        var person = smart.person;
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -50,7 +49,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);    
           p.pebirthdate = "uy";
-          p.pegender = person.gender;
+          p.pegender = "male";
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
