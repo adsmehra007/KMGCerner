@@ -34,7 +34,7 @@
   results.forEach(function(encounter){
     if(encounter.reason!=null)
     {
-      encounters.push(encounter.reason);
+      encounters.push(encounter.reason+"( "+encounter.location.location+" )");
     }
   });
 });
