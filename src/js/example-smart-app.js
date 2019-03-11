@@ -24,11 +24,15 @@
                     }
                   });
      
- var person=patient.api.fetchAll({type: "Person"});
-         var encounter=patient.api.fetchAll({type:"Encounter"});
+ var person=smart.patient.api.fetchAll({type: "Person"});
+   smart.patient.api.fetchAll({type:"Encounter"});.then(function(results, refs) {
+  results.forEach(function(encounter){
+   console.log('encounter status: ' ,encounter.status);
+  });
+});
         
         console.log('person name: ' ,person.name);
-         console.log('encounter status: ' ,encounter.status);
+       
 
         $.when(pt, obv).fail(onError);
 
