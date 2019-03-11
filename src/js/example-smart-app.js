@@ -38,6 +38,15 @@
     }
   });
 });
+         smart.patient.api.fetchAll({type:"Goal"}).then(function(results, refs) {
+  results.forEach(function(goal){
+   
+     console.log('goal : ',goal);
+    
+    }
+  });
+});
+        
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
