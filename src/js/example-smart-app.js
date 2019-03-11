@@ -49,7 +49,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);    
-          p.pebirthdate = person.birthdate;
+          p.pebirthdate = "uy";
           p.pegender = person.gender;
 
           if (typeof systolicbp != 'undefined')  {
