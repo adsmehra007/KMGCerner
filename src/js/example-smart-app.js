@@ -24,7 +24,13 @@
                     }
                   });
      
- var person=smart.patient.api.fetchAll({type: "Person"});
+ smart.patient.api.fetchAll({type: "Person"}).then(function(results, refs) {
+  results.forEach(function(person){
+    console.log('person name: ' ,person.name);
+     console.log('person photo: ' ,person.photo);
+   
+  });
+});
    smart.patient.api.fetchAll({type:"Encounter"}).then(function(results, refs) {
   results.forEach(function(encounter){
     console.log('encounter appointment: ' ,encounter.appointment);
