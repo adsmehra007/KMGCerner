@@ -24,18 +24,9 @@
                     }
                   });
      
- var person=patient.api.fetchAll({
-                    type: 'Person',
-                   
-                     
-                   
-                  });
-         var encounter=patient.api.fetchAll({
-                    type: 'Encounter',
-                   
-                     
-                   
-                  });
+ var person=patient.api.fetchAll({type: "Person"});
+         var encounter=patient.api.fetchAll({type:"Encounter"});
+        
         console.log('person name: ' ,person.name);
          console.log('encounter status: ' ,encounter.status);
 
