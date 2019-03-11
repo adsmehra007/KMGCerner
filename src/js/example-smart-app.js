@@ -33,8 +33,8 @@
    smart.patient.api.fetchAll({type:"Encounter"}).then(function(results, refs) {
   results.forEach(function(encounter){
     if(encounter.reason!=null)
-    {
-      encounters.push(encounter.reason+"( "+encounter.location.location+" )");
+    {console.log('encounter location: ',encounter.location.location);
+      encounters.push(encounter.reason);
     }
   });
 });
