@@ -33,12 +33,12 @@
         console.log('person' ,person);
         $.when(pt, obv).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv,person).done(function(patient, obv,person) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
           var fname = '';
           var lname = '';
-
+ console.log('person name: ',person.name);
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
