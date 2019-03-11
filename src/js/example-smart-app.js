@@ -28,7 +28,6 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-          var patientAddress=patientAddress(patient.address);
           var fname = '';
           var lname = '';
 
@@ -40,6 +39,8 @@
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
+          var patientAddress =patient.address;
+ console.log('Address',patientAddress.text+" "+patientAddress.city+" "+patientAddress.district);
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
@@ -49,7 +50,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-
+p.patientAdd=patientAddress;
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -87,6 +88,7 @@
       patientAdd: {value: ''},
     };
   }
+  
   function patientAddress(pAdd){
     console.log('Address',pAdd.text+" "+pAdd.city+" "+pAdd.district);
     return pAdd.text+" "+pAdd.city+" "+pAdd.district;
