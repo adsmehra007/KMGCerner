@@ -30,10 +30,10 @@
                      
                    
                   });
-        console.log('person' ,person);
+        console.log('person name: ' ,person.name);
         $.when(pt, obv).fail(onError);
 
-        $.when(pt, obv,person).done(function(patient, obv,person) {
+        $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
           var fname = '';
@@ -48,7 +48,7 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var patientAddress =patient.address;
-          console.log('patient address: ',patientAddress);
+          
           if(patientAddress!= null)
           {
             patientAddress =patientAddress[0].text; 
