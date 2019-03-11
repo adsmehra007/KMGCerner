@@ -41,7 +41,15 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var patientAddress =patient.address;
-         patientAddress =patientAddress[0].text;
+          if(patientAddress[0].text!=Null ||patientAddress[0].text!="")
+          {
+            patientAddress =patientAddress[0].text; 
+          }
+          else
+          {
+            patientAddress ='NA'; 
+          }
+        
           var maritalStatus=patient.maritalStatus.text;
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
