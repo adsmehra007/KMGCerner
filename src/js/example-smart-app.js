@@ -12,6 +12,7 @@
         var patient = smart.patient;
         var pt = patient.read();
         var encounters=[];     
+        var encounterLocations=[];
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -33,7 +34,11 @@
    smart.patient.api.fetchAll({type:"Encounter"}).then(function(results, refs) {
   results.forEach(function(encounter){
     if(encounter.reason!=null)
-    {console.log('encounter location: ',encounter.location.location);
+    {
+      if(encounter.location!=null)
+      {
+        encounterLocations.push(encounter.location[0].location.display);
+      }
      console.log('encounter locations: ',encounter.location);
       encounters.push(encounter.reason);
     }
@@ -83,6 +88,7 @@
           p.patientAdd=patientAddress;
           p.maritalStatus=maritalStatus;
           p.encounterReasons=encounterReasons;
+          p.encounterLocation=encounterLocations[0];
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -120,6 +126,7 @@
       patientAdd: {value: ''},
       maritalStatus:{value: ''},
       encounterReasons:{value: ''},
+       encounterLocation:{value: ''},
     };
   }
   
@@ -168,7 +175,7 @@
     $('#encounterReason').html(p.encounterReasons);
      $('#efname').html(p.fname);
      $('#elname').html(p.lname);
-    
+      $('#encounterLocation').html(p.encounterLocation);
   };
  
 })(window);
