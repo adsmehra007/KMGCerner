@@ -46,7 +46,7 @@
           var gender = patient.gender;
           var fname = '';
           var lname = '';
- console.log('person name: ',person.name);
+
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
