@@ -10,6 +10,7 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
+        var person = smart.person;
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -47,7 +48,9 @@
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
-          p.height = getQuantityValueAndUnit(height[0]);
+          p.height = getQuantityValueAndUnit(height[0]);    
+          p.pebirthdate = person.birthdate;
+          p.pegender = person.gender;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -83,9 +86,11 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+       pegender: {value: ''},
+      pebirthdate: {value: ''},
     };
   }
-
+   
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
     BPObservations.forEach(function(observation){
@@ -126,6 +131,8 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+     $('#pegender').html(p.pegender);
+    $('#pebirthdate').html(p.pebirthdate);
   };
   
 
