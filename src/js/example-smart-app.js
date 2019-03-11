@@ -10,9 +10,8 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        console.log('smart' ,smart);
         var pt = patient.read();
-         console.log('Patient',pt);
+        var encounters=[];     
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -33,12 +32,14 @@
 });
    smart.patient.api.fetchAll({type:"Encounter"}).then(function(results, refs) {
   results.forEach(function(encounter){
-    console.log('encounter appointment: ' ,encounter.appointment);
-     console.log('encounter period: ' ,encounter.period);
+    if(encounter.reason!=null)
+    {
+      encounters.push(encounter.reason);
+    }
    console.log('encounter reason: ' ,encounter.reason);
   });
 });
-        
+          console.log('encounter reasons: ' ,encounters);
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
