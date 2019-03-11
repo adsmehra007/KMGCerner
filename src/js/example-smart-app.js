@@ -41,8 +41,8 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var patientAddress =patient.address;
          patientAddress =patientAddress[0].text;
-          var maritalStatus=patient.maritalStatus;
-          console.log('maritalStatus',patient.maritalStatus);
+          var maritalStatus=patient.maritalStatus.text;
+          console.log('maritalStatus',patient.maritalStatus.text);
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
