@@ -139,5 +139,4 @@ p.patientAdd=patientAddress;
     $('#patientAdd').html(p.patientAdd);
   };
   
-
 })(window);
