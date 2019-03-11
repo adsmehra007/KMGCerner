@@ -13,6 +13,7 @@
         var pt = patient.read();
         var encounters=[];     
         var encounterLocations=[];
+        var Immunizations=[];
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -40,8 +41,9 @@
 });
          smart.patient.api.fetchAll({type:"Immunization"}).then(function(results, refs) {
   results.forEach(function(im){
-   
+   Immunizations.push(im);
      console.log('Immunization : ',im);
+    return false;
     
     
   });
@@ -92,6 +94,13 @@
           p.maritalStatus=maritalStatus;
           p.encounterReasons=encounterReasons;
           p.encounterLocation=encounterLocations[0];
+          p.immuDate=Immunizations[0].date;
+          p.immuDosage=Immunizations[0].doseQuantity.value +Immunizations[0].doseQuantity.unit; 
+          p.immuLocation =Immunizations[0].location.display;
+          p.immuManufacturer=Immunizations[0].manufacturer.display;
+          p.immuPerformer= Immunizations[0].performer.display;
+          p.immuSite=Immunizations[0].site.text; 
+
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -130,6 +139,12 @@
       maritalStatus:{value: ''},
       encounterReasons:{value: ''},
        encounterLocation:{value: ''},
+      immuDate :{value: ''},
+      immuDosage :{value: ''},
+      immuLocation :{value: ''},
+      immuManufacturer :{value: ''},
+      immuPerformer :{value: ''},
+      immuSite :{value: ''},
     };
   }
   
@@ -179,6 +194,13 @@
      $('#efname').html(p.fname);
      $('#elname').html(p.lname);
       $('#encounterLocation').html(p.encounterLocation);
+    $('#iDate').html(p.immuDate);
+    $('#iQuantity').html(p.immuDosage);
+    $('#iLocation').html(p.immuLocation);
+    $('#iManufacturer').html(p.immuManufacturer);
+    $('#iPerformer').html(p.immuPerformer);
+    $('#iSite').html(p.immuSite);
+   
   };
  
 })(window);
