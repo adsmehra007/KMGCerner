@@ -25,7 +25,7 @@
                   });
      
  var person=smart.patient.api.fetchAll({type: "Person"});
-   smart.patient.api.fetchAll({type:"Encounter"});.then(function(results, refs) {
+   smart.patient.api.fetchAll({type:"Encounter"}).then(function(results, refs) {
   results.forEach(function(encounter){
    console.log('encounter status: ' ,encounter.status);
   });
