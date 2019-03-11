@@ -12,6 +12,7 @@
         var patient = smart.patient;
         console.log('smart' ,smart);
         var pt = patient.read();
+         console.log('Patient',pt);
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -54,7 +55,7 @@
           var maritalStatus=patient.maritalStatus.text;
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-          console.log('Patient',patient.read());
+         
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
