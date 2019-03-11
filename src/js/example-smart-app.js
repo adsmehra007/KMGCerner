@@ -42,6 +42,7 @@
           var patientAddress =patient.address;
          patientAddress =patientAddress[0].text;
           var maritalStatus=patient.maritalStatus;
+          Console.log('maritalStatus'.patient.maritalStatus);
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
@@ -51,7 +52,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-p.patientAdd=patientAddress;
+          p.patientAdd=patientAddress;
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -91,12 +92,6 @@ p.patientAdd=patientAddress;
     };
   }
   
-  function patientAddress(pAdd){
-    console.log('Address',pAdd.text+" "+pAdd.city+" "+pAdd.district);
-    return pAdd.text+" "+pAdd.city+" "+pAdd.district;
-      
-    
-  }
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
     BPObservations.forEach(function(observation){
