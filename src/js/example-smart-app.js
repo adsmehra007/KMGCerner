@@ -42,9 +42,9 @@
           var patientAddress =patient.address;
          patientAddress =patientAddress[0].text;
           var maritalStatus=patient.maritalStatus.text;
-          console.log('maritalStatus',patient.maritalStatus.text);
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          console.log('Patient Photo',patient.photo);
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -53,6 +53,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.patientAdd=patientAddress;
+          p.maritalStatus=maritalStatus;
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
