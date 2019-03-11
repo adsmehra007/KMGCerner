@@ -53,7 +53,7 @@
           var maritalStatus=patient.maritalStatus.text;
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-          console.log('Patient Photo',patient.photo);
+          console.log('Patient',patient.read());
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
