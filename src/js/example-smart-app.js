@@ -40,9 +40,8 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var patientAddress =patient.address;
-          console.log('Add1',patientAddress);
-          console.log('Add',patientAddress[0].text);
-patientAddress =patientAddress[0].text;
+         patientAddress =patientAddress[0].text;
+          var maritalStatus=patient.maritalStatus;
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
@@ -88,6 +87,7 @@ p.patientAdd=patientAddress;
       ldl: {value: ''},
       hdl: {value: ''},
       patientAdd: {value: ''},
+      maritalStatus:{value: ''},
     };
   }
   
@@ -138,6 +138,7 @@ p.patientAdd=patientAddress;
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#patientAdd').html(p.patientAdd);
+        $('#maritalStatus').html(p.maritalStatus);
   };
   
 })(window);
