@@ -36,10 +36,8 @@
     {
       encounters.push(encounter.reason);
     }
-   console.log('encounter reason: ' ,encounter.reason);
   });
 });
-          console.log('encounter reasons: ' ,encounters);
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
@@ -57,7 +55,10 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var patientAddress =patient.address;
-          
+          var encounterReasons=" ";
+          $.each(encounters, function( index, value ) {
+            encounterReasons+=value[0].text+"," ;
+          });
           if(patientAddress!= null)
           {
             patientAddress =patientAddress[0].text; 
@@ -80,6 +81,7 @@
           p.height = getQuantityValueAndUnit(height[0]);
           p.patientAdd=patientAddress;
           p.maritalStatus=maritalStatus;
+          p.encounterReasons=encounterReasons;
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -116,6 +118,7 @@
       hdl: {value: ''},
       patientAdd: {value: ''},
       maritalStatus:{value: ''},
+      encounterReasons:{value: ''},
     };
   }
   
@@ -161,6 +164,8 @@
     $('#hdl').html(p.hdl);
     $('#patientAdd').html(p.patientAdd);
         $('#maritalStatus').html(p.maritalStatus);
+    $('#encounterReason').html(p.encounterReasons);
+    
   };
  
 })(window);
