@@ -161,6 +161,6 @@
     $('#patientAdd').html(p.patientAdd);
         $('#maritalStatus').html(p.maritalStatus);
   };
-  
+ 
 })(window);
 
