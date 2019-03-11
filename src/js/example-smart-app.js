@@ -42,7 +42,7 @@
           var patientAddress =patient.address;
          patientAddress =patientAddress[0].text;
           var maritalStatus=patient.maritalStatus;
-          Console.log('maritalStatus'.patient.maritalStatus);
+          console.log('maritalStatus'.patient.maritalStatus);
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
