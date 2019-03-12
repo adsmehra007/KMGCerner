@@ -42,10 +42,13 @@
          smart.patient.api.fetchAll({type:"Immunization"}).then(function(results, refs) {
   results.forEach(function(im){
    Immunizations.push(im);
-     console.log('Immunization : ',im);
     return false;
-    
-    
+  });
+});
+             smart.patient.api.fetchAll({type:"MedicationOrder"}).then(function(results, refs) {
+  results.forEach(function(medOrder){
+     console.log('Medication Order : ',medOrder);
+    return false;
   });
 });
         
