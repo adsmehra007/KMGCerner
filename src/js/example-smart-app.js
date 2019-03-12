@@ -79,7 +79,8 @@
             patientAddress ='NA'; 
           }
         
-          var maritalStatus=patient.maritalStatus.text;
+        //  var maritalStatus=patient.maritalStatus.text;
+          var maritalStatus='N/A';
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
          
@@ -94,13 +95,13 @@
           p.maritalStatus=maritalStatus;
           p.encounterReasons=encounterReasons;
           p.encounterLocation=encounterLocations[0];
-         if(Immunizations[0].date!=null)
-             {p.immuDate=Immunizations[0].date;
-             }
-          else
-          {
+       //  if(Immunizations[0].date!=null)
+            // {p.immuDate=Immunizations[0].date;
+           //  }
+        //  else
+        //  {
             p.immuDate='N/A';
-          }  
+         // }  
           
           p.immuDosage=Immunizations[0].doseQuantity.value +Immunizations[0].doseQuantity.unit; 
           p.immuLocation =Immunizations[0].location.display;
