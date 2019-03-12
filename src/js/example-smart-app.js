@@ -47,7 +47,7 @@
 });
              smart.patient.api.fetchAll({type:"MedicationStatement"}).then(function(results, refs) {
   results.forEach(function(medOrder){
-     console.log('Medication Order : ',medOrder);
+     console.log('Medication Order : ',medOrder.text.div);
     return false;
   });
 });
