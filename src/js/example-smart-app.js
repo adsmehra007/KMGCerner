@@ -13,6 +13,7 @@
         var pt = patient.read();
         var encounters=[];     
         var encounterLocations=[];
+        var medicationStatement=[];
         var Immunizations=[];
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -47,7 +48,9 @@
 });
              smart.patient.api.fetchAll({type:"MedicationStatement"}).then(function(results, refs) {
   results.forEach(function(medOrder){
+    medicationStatement.push(medOrder.text.div);
      console.log('Medication Order : ',medOrder.text.div);
+    break;
     return false;
   });
 });
@@ -111,7 +114,7 @@
           p.immuManufacturer=Immunizations[0].manufacturer.display;
           p.immuPerformer= Immunizations[0].performer.display;
           p.immuSite=Immunizations[0].site.text; 
-
+          p.medicationStatement=medicationStatement[0];
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -156,6 +159,7 @@
       immuManufacturer :{value: ''},
       immuPerformer :{value: ''},
       immuSite :{value: ''},
+      medicationStatement :{value: ''},
     };
   }
   
@@ -211,6 +215,8 @@
     $('#iManufacturer').html(p.immuManufacturer);
     $('#iPerformer').html(p.immuPerformer);
     $('#iSite').html(p.immuSite);
+      $('#medicationStatement').html(p.medicationStatement);
+    
    
   };
  
