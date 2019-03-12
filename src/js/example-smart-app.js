@@ -94,13 +94,13 @@
           p.maritalStatus=maritalStatus;
           p.encounterReasons=encounterReasons;
           p.encounterLocation=encounterLocations[0];
-         /* if(Immunizations[0].date!=null)
+         if(Immunizations[0].date!=null)
              {p.immuDate=Immunizations[0].date;
              }
           else
-          {*/
+          {
             p.immuDate='N/A';
-          //}  
+          }  
           
           p.immuDosage=Immunizations[0].doseQuantity.value +Immunizations[0].doseQuantity.unit; 
           p.immuLocation =Immunizations[0].location.display;
