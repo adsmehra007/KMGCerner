@@ -46,14 +46,7 @@
     return false;
   });
 });
-             smart.patient.api.fetchAll({type:"MedicationStatement"}).then(function(results, refs) {
-  results.forEach(function(medOrder){
-    medicationStatement.push(medOrder);
-     console.log('Medication Statement : ',medOrder);
-  
-    return false;
-  });
-});
+            
         
         $.when(pt, obv).fail(onError);
 
@@ -115,8 +108,8 @@
           p.immuPerformer= Immunizations[0].performer.display;
           p.immuSite=Immunizations[0].site.text; 
         // p.msPName=medicationStatement[0].patient.display
-          p.msQuantity='N/A'
-            p.msMedicationName=medicationStatement[0].medicationCodeableConcept.text;
+         // p.msQuantity='N/A'
+          //  p.msMedicationName=medicationStatement[0].medicationCodeableConcept.text;
         
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -162,11 +155,11 @@
       immuManufacturer :{value: ''},
       immuPerformer :{value: ''},
       immuSite :{value: ''},
-      medicationStatement :{value: ''},
-      msPName:{value: ''},
-      msQuantity:{value: ''},
-      msMedicationName:{value: ''},
-      msInstructions:{value: ''},
+    //  medicationStatement :{value: ''},
+     // msPName:{value: ''},
+    //  msQuantity:{value: ''},
+     // msMedicationName:{value: ''},
+     // msInstructions:{value: ''},
     };
   }
   
@@ -222,11 +215,11 @@
     $('#iManufacturer').html(p.immuManufacturer);
     $('#iPerformer').html(p.immuPerformer);
     $('#iSite').html(p.immuSite);
-      $('#medicationStatement').html(p.medicationStatement);
+    //  $('#medicationStatement').html(p.medicationStatement);
     
-    $('#msPName').html(p.lname+','+p.fname);
-    $('#msQuantity').html(p.msQuantity);
-    $('#msMedicationName').html(p.msMedicationName);
+   // $('#msPName').html(p.lname+','+p.fname);
+   // $('#msQuantity').html(p.msQuantity);
+   // $('#msMedicationName').html(p.msMedicationName);
   };
 
 })(window);
