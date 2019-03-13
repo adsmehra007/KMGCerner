@@ -224,7 +224,7 @@
     $('#iSite').html(p.immuSite);
       $('#medicationStatement').html(p.medicationStatement);
     
-    $('#msPName').html(p.msPName);
+    $('#msPName').html(p.lname+','+p.fname);
     $('#msQuantity').html(p.msQuantity);
     $('#msMedicationName').html(p.msMedicationName);
   };
