@@ -50,7 +50,7 @@
   results.forEach(function(medOrder){
     medicationStatement.push(medOrder.text.div);
      console.log('Medication Order : ',medOrder.text.div);
-    break;
+  
     return false;
   });
 });
