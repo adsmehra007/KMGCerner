@@ -115,6 +115,8 @@
           p.immuPerformer= Immunizations[0].performer.display;
           p.immuSite=Immunizations[0].site.text; 
           p.medicationStatement=medicationStatement[0];
+          console.log('medication Statement array',medicationStatement[0]);
+          console.log('medication Statement object',p.medicationStatement);
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
