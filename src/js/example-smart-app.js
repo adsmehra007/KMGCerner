@@ -48,7 +48,7 @@
 });
              smart.patient.api.fetchAll({type:"MedicationStatement"}).then(function(results, refs) {
   results.forEach(function(medOrder){
-    medicationStatement.push(medOrder.text.div);
+    medicationStatement.push(medOrder);
      console.log('Medication Statement : ',medOrder);
   
     return false;
@@ -114,9 +114,10 @@
           p.immuManufacturer=Immunizations[0].manufacturer.display;
           p.immuPerformer= Immunizations[0].performer.display;
           p.immuSite=Immunizations[0].site.text; 
-          p.medicationStatement=medicationStatement[0];
-          console.log('medication Statement array',medicationStatement[0]);
-          console.log('medication Statement object',p.medicationStatement);
+         p.msPName=medicationStatement[0].patient.display
+          p.msQuantity='N/A'
+            p.msMedicationName=medicationStatement[0].medicationCodeableConcept.text;
+        
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -162,6 +163,10 @@
       immuPerformer :{value: ''},
       immuSite :{value: ''},
       medicationStatement :{value: ''},
+      msPName:{value: ''},
+      msQuantity:{value: ''},
+      msMedicationName:{value: ''},
+      msInstructions:{value: ''},
     };
   }
   
@@ -219,7 +224,9 @@
     $('#iSite').html(p.immuSite);
       $('#medicationStatement').html(p.medicationStatement);
     
-   
+    $('#msPName').html(p.msPName);
+    $('#msQuantity').html(p.msQuantity);
+    $('#msMedicationName').html(p.msMedicationName);
   };
 
 })(window);
