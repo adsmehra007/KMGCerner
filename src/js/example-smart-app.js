@@ -114,7 +114,7 @@
           p.immuManufacturer=Immunizations[0].manufacturer.display;
           p.immuPerformer= Immunizations[0].performer.display;
           p.immuSite=Immunizations[0].site.text; 
-         p.msPName=medicationStatement[0].patient.display
+        // p.msPName=medicationStatement[0].patient.display
           p.msQuantity='N/A'
             p.msMedicationName=medicationStatement[0].medicationCodeableConcept.text;
         
